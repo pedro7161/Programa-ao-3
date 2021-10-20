@@ -66,3 +66,15 @@ for j in 0...sequen.count-1{
 print("***********")
 
 //ex6
+Print("ex6")
+var ar1=[1,4,6]
+var ar2=[2,3,5]
+for j in 0...ar2.count-1 {
+    ar1.append(ar2[j])
+}
+for i in 0...ar1.count-1
+{
+    ar1.sort()
+   
+}
+print(ar1)
