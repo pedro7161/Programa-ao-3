@@ -10,19 +10,17 @@ for i in stride(from: nomes.count-1, to: -1, by: -1) {
 }
 print("Exer1 : \(nomesinve)")
 //exer2
-let numeros=["10","1000","10000","18000","123"]
-var maior:Int?
-var menor:Int?
-for i in 0...numeros.count-1
-{
-    menor=numeros[i]
-    if(maior>menor){
-        print(numeros[i])
-        
-    }
-}
+var numeros=["10","1000","10000","18000","123"]
+let arrayInt = numeros.compactMap { Int($0) }
+var maior:String
 
-print("Exer2 : ")
+
+
+for k in 0...numeros.count-1{
+    Int(numeros).sort()
+    maior=numeros[k]
+}
+print("Exer2 :\(maior)")
 
 //exer 3
 print("Ex3")
@@ -83,3 +81,44 @@ for i in 0...ar1.count-1
    
 }
 print(ar1)
+
+
+
+
+
+
+
+
+
+
+
+
+import UIKit
+
+func printar(message:String)
+{
+    print(message)
+}
+
+
+var str="Hello, playground"
+//var dicionario=["primeiro":1,"Segundo":2]
+var array=[1,2,4,4]
+//var matriz=[1,2,3,4][4,3,2,1][1,2,3,4]
+	var cond=true
+var resultado = cond ? "Verdade":"Falso"
+
+
+printar(message: str)
+
+for i in stride(from: array.count-1, to: -1, by: -1){
+  printar(message: String(i))
+  
+}
+
+let numberoflegs = ["aranha":8,"formiga":6]
+
+for (key,value) in numberoflegs{
+    print("animal: \(key) Legs: \(value)")
+}
+	
