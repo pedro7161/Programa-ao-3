@@ -9,16 +9,21 @@ for i in stride(from: nomes.count-1, to: -1, by: -1) {
     
 }
 print("Exer1 : \(nomesinve)")
-/*
+//exer2
 let numeros=["10","1000","10000","18000","123"]
-var maior:Int
-maior=1
-for k in 0...numeros.count{
-            
-    
+var maior:Int?
+var menor:Int?
+for i in 0...numeros.count-1
+{
+    menor=numeros[i]
+    if(maior>menor){
+        print(numeros[i])
+        
+    }
 }
-print("Exer2 : \(maior)")
-*/
+
+print("Exer2 : ")
+
 //exer 3
 print("Ex3")
 var numeross=2
@@ -66,7 +71,7 @@ for j in 0...sequen.count-1{
 print("***********")
 
 //ex6
-Print("ex6")
+print("ex6")
 var ar1=[1,4,6]
 var ar2=[2,3,5]
 for j in 0...ar2.count-1 {
