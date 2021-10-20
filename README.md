@@ -1,5 +1,3 @@
-# Programa-ao-3
-
 import UIKit
 
 let nomes=["maria","pedro","joao","fabio","lucas","andre"]
@@ -11,7 +9,7 @@ for i in stride(from: nomes.count-1, to: -1, by: -1) {
     
 }
 print("Exer1 : \(nomesinve)")
-
+/*
 let numeros=["10","1000","10000","18000","123"]
 var maior:Int
 maior=1
@@ -20,8 +18,9 @@ for k in 0...numeros.count{
     
 }
 print("Exer2 : \(maior)")
-
+*/
 //exer 3
+print("Ex3")
 var numeross=2
 
 if (numeross%2==0){
@@ -34,6 +33,7 @@ else if(numeross%2==1){
 }
 
 //exer4.1
+print("Ex4,1")
 for n1 in 0...100{
 
 if(n1%2==1){
@@ -42,7 +42,8 @@ if(n1%2==1){
     
 }
 
-//exer4.2
+//exer4.2
+print("Ex4.2")
 for n1 in 0...100{
 
 if(n1%2==0){
@@ -50,3 +51,18 @@ if(n1%2==0){
 }
     
 }
+
+//exer5
+func imprime(moldura:String){
+    
+    print("*\(moldura) *")
+}
+print("Ex5")
+var sequen = ["Hello","World","numa","moldura"]
+print("***********")
+for j in 0...sequen.count-1{
+    imprime(moldura: sequen[j])
+}
+print("***********")
+
+//ex6
