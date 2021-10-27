@@ -44,7 +44,7 @@ if(n1%2==1){
     
 }
 
-//exer4.2
+//exer4.2
 print("Ex4.2")
 for n1 in 0...100{
 
@@ -55,17 +55,47 @@ if(n1%2==0){
 }
 
 //exer5
-func imprime(moldura:String){
+let words = ["Hello","World","num","moldura"]
+var tamanho = 0
+for word in words {
+    if word.count > tamanho {
+        tamanho = word.count
+    }
+}
+print(" A maior palavra têm \(tamanho) caracteres")
+
+let padding = 8
+var asteriscos = ""
+
+for i in 0...tamanho+padding {
+    asteriscos+="*"
+}
+
+asteriscos += "*"
+
+print(asteriscos)
+
+for word in words {
     
-    print("*\(moldura) *")
+    let size = ((tamanho+padding) - (2 + word.count))/2
+    var temp = "*"
+    for _ in 0...size{
+        temp+=" "
+    }
+    temp += word
+    for _ in 0...size{
+        temp+=" "
+    }
+    if(word.count % 2 == 0){
+        temp += " *"
+    }else{
+        temp += "*"
+    }
+  
+    print(temp)
 }
-print("Ex5")
-var sequen = ["Hello","World","numa","moldura"]
-print("***********")
-for j in 0...sequen.count-1{
-    imprime(moldura: sequen[j])
-}
-print("***********")
+
+print(asteriscos)
 
 //ex6
 print("ex6")
