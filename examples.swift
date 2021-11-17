@@ -328,3 +328,59 @@ ForEach(observedviewmodel.leaguedata?.matchs ?? [],id:\.id{ result in
         Text("\(result.team1) \(result.ft[0]) \(result.ft[1])\(result.team2)")
     }
 })
+
+
+struct temperaturas{
+    let coords:[coord]
+    let weather:[weathers]
+    let base:String
+    let main:[mains]
+    let visibility:Int
+    let wind:[winds]
+    let clouds:[cloud]
+    let dt:Int
+    let sys:[Sys]
+    let timezone:Int
+    let id:Int
+    let name:string
+    let cod:Int
+}
+
+
+
+struct coord: Codable,Identifiable{
+    let long:Float
+    let lat:Float
+    
+}
+struct weathers: Codable,Identifiable{
+    let id:UUID()
+    let main:String
+    let description:String
+    let icon:String
+}
+
+
+struct mains: Codable,Identifiable{
+    let temp:Float
+    let feels_like:Float
+    let temp_min:Float
+    let temp_max:Float
+    let pressure:Int
+    let humidity:Int
+}
+struct winds : Codable,Identifiable{
+    let speed:Float
+    let deg:Int
+}
+struct cloud : Codable,Identifiable{
+    let all:Int
+}
+struct Sys: Codable,Identifiable{
+ let type:Int
+ let id : UUID()
+ let message:Float
+ let country: String
+ let sunrise:Int
+ let sunset:Int
+}
