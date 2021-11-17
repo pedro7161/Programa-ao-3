@@ -289,3 +289,42 @@ struct Score: Codable,Identifiable{
 let id=UUID()
     let ft:String
 }
+//viewmodel
+//
+class leagueviewmodel:ObservableObject {
+ @published var leaguedata : league?
+ 
+ init() {
+     self.fetchAPI()
+ }
+  func fetchAPI(){
+      
+        guard let url = URL(string: "https://training.xcelvations.com/temp/books.json") else {
+            print("Invalid url...")
+            return
+        }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            let leag = try! JSONDecoder().decode(league.self, from: data!)
+            print(leag)
+            DispatchQueue.main.async {
+                completion(leag)
+            }
+        }.resume()
+
+  }
+
+    
+}
+
+
+//view
+//é preciso ma variavel que va buscar o viewmodel
+@ObservableObject var observedviewmodel=leagueviewmodel()
+//para ir buscaar a api
+Text(observedviewmodel.leaguedata?.name?? "NA") // os ?? servem para dar outro valor quando nao existe um valor
+//para passar pelos arrays da api
+ForEach(observedviewmodel.leaguedata?.matchs ?? [],id:\.id{ result in
+    if let score=result.score{
+        Text("\(result.team1) \(result.ft[0]) \(result.ft[1])\(result.team2)")
+    }
+})
