@@ -89,7 +89,7 @@ for word in words {
     if(word.count % 2 == 0){
         temp += " *"
     }else{
-        temp += "*"
+        te  mp += "*"
     }
   
     print(temp)
