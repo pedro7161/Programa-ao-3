@@ -265,4 +265,27 @@ struct ContentView_Previews: PreviewProvider {
 
 //navegaçao
 //MVVM Module View ViewModal
+
+//module-modelo de dados do ecra
+//view-parte grafica do ecra
+//viewmodal parte comportamental
 //
+
+//como estruturar para api
+
+struct league: Codable,Identifiable{
+    let id=UUID()
+    let name:String
+    let matchs:[match]
+}
+struct match: Codable,Identifiable {
+let round: String
+let date: String
+let team1:String
+let team2:String
+let score:Score?  //caso nao exista score na api
+}
+struct Score: Codable,Identifiable{
+let id=UUID()
+    let ft:String
+}
