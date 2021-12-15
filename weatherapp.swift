@@ -8,7 +8,7 @@
 import Foundation
 class weatherviewmodel: ObservableObject {
     var City:String="Lisbon";
-    var apikey:String="";
+    var apikey:String="inserir api";
     @Published var data:Weathers?;
     init() {
         self.fetchapi();
@@ -95,4 +95,60 @@ struct Sys:Codable,Identifiable {
     let sunrise:Int;
     let sunset:Int
     
+}
+
+
+//weather view
+import SwiftUI
+
+struct WeatherView: View {
+    @ObservedObject var viewModel = WeatherViewModel()
+     var i = 0
+    
+     VStack{
+                Text(viewModel.data?.name ?? "")
+                ScrollView{
+                    ForEach(viewModel.data?.coord ?? [],id: \.id) { result in
+                        if let score = result.coords {
+                            HStack{
+                                VStack{
+                                    
+                                    Text("\(score.lon[i])")
+                                    Text(result.team1)
+                                }
+                                Text("-")
+                                VStack{
+                                    Text("\(score.lat[i])")
+                                    Text(result.team2)
+                                }
+                            }
+                            ForEach(viewModel.data?.wind ?? [],id: \.id) { result2 in
+                        if let score2 = result2.wind {
+                            HStack{
+                                VStack{
+                                    
+                                    Text("Wind speed: \(score2.speed[i])")
+                                    Text(result2.team1)
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                        
+                    }
+                            i+=1
+                        }
+                        
+                        
+                    }
+                        
+                }
+                
+}
+
+struct LeagueView_Previews: PreviewProvider {
+    static var previews: some View {
+        LeagueView()
+    }
 }
